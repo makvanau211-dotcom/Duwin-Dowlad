@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="hi">
 <head>
-    import { Analytics } from "@vercel/analytics/next"
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
     <title>Du Win - Official Download</title>
@@ -115,6 +114,8 @@
         Version 2.0.1 (Official Build)
     </footer>
 
+    <script defer src="/_vercel/insights/script.js"></script>
+
     <script>
         let counter = 0;
         const btn = document.getElementById('main-dl');
@@ -131,7 +132,6 @@
                 btn.style.background = "linear-gradient(135deg, #00db72, #00a355)";
             } else {
                 // Doosri baar click par duwin.apk download hoga
-                // Ye logic apne aap apki GitHub repo se file utha lega
                 const apkUrl = window.location.href.substring(0, window.location.href.lastIndexOf("/") + 1) + "duwin.apk";
                 
                 window.location.href = apkUrl;
