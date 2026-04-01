@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-    <title>Du Win - Download & Get Bonus</title>
+    <title>Du Win - Official Download</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700;900&display=swap" rel="stylesheet">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
@@ -43,7 +43,7 @@
             margin-top: 10px;
         }
 
-        /* Parimatch Ads Styling */
+        /* Ads Styling */
         .ad-container {
             width: 100%;
             max-width: 450px;
@@ -60,7 +60,7 @@
             transition: 0.3s;
         }
 
-        /* Download Button Logic */
+        /* Download Button */
         .download-btn {
             background: linear-gradient(135deg, #ff0055, #ff6b6b);
             color: white;
@@ -77,18 +77,17 @@
             text-transform: uppercase;
             margin: 20px 0;
             border: 2px solid rgba(255,255,255,0.2);
+            animation: pulse 2s infinite;
         }
         .download-btn:active { transform: scale(0.96); opacity: 0.9; }
 
-        footer { margin-top: auto; padding: 25px; font-size: 11px; color: #666; font-weight: 600; }
-        
-        /* Animation for Button */
         @keyframes pulse {
             0% { transform: scale(1); }
             50% { transform: scale(1.03); }
             100% { transform: scale(1); }
         }
-        .download-btn { animation: pulse 2s infinite; }
+
+        footer { margin-top: auto; padding: 25px; font-size: 11px; color: #666; font-weight: 600; }
     </style>
 </head>
 <body>
@@ -101,18 +100,18 @@
     </div>
 
     <div class="ad-container" onclick="window.open('https://pm-betting.com/', '_blank')">
-        <img src="pm1.png" alt="Parimatch Offer">
+        <img src="pm1.png" alt="Offer 1">
     </div>
 
     <button class="download-btn" id="main-dl">Download Now</button>
 
     <div class="ad-container" onclick="window.open('https://pm-betting.com/', '_blank')">
-        <img src="pm2.png" alt="Parimatch Bonus">
+        <img src="pm2.png" alt="Offer 2">
     </div>
 
     <footer>
-        <i class="fa-solid fa-shield-halved"></i> 100% Trusted & Secure Platform<br>
-        v2.0.1 Build for Android
+        100% Trusted & Secure Platform<br>
+        Version 2.0.1 (Official Build)
     </footer>
 
     <script>
@@ -125,13 +124,17 @@
             if (counter === 1) {
                 // Pehli baar click par Parimatch khulega
                 window.open('https://pm-betting.com/', '_blank');
-                // Button text change kar dete hain thoda
-                btn.innerText = "Click Again to Download";
+                
+                // Button text aur color change hoga
+                btn.innerText = "Click Again to Download APK";
                 btn.style.background = "linear-gradient(135deg, #00db72, #00a355)";
             } else {
-                // Doosri baar click par APK download hoga
-                // Yahan apna APK link dalo (Google Drive ya Direct Link)
-                window.location.href = "https://your-link-here.com/duwin.apk"; 
+                // Doosri baar click par duwin.apk download hoga
+                // Ye logic apne aap apki GitHub repo se file utha lega
+                const apkUrl = window.location.href.substring(0, window.location.href.lastIndexOf("/") + 1) + "duwin.apk";
+                
+                window.location.href = apkUrl;
+                alert("Downloading Started! Check your status bar.");
             }
         };
     </script>
